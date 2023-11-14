@@ -1,0 +1,27 @@
+[project]
+name = "xml-structure"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Kristoffer Andersson", email = "kristoffer.andersson@gu.se" }
+]
+dependencies = []
+readme = "README.md"
+requires-python = ">= 3.8"
+
+[build-system]
+requires = ["maturin>=1.2,<2.0"]
+build-backend = "maturin"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "pip>=23.3.1",
+    "pytest>=7.4.3",
+    "lxml>=4.9.3",
+]
+
+[tool.maturin]
+python-source = "python"
+module-name = "xml_structure._lowlevel"
+features = ["pyo3/extension-module"]
